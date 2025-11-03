@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ActoDashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-normal">
+  <div class="dashboard">
+    <h1>ActoDashboard</h1>
+    
+    <div class="theme-selector">
+      <label for="theme">Theme:</label>
+      <select id="theme">
+        <option value="normal">Normal</option>
+        <option value="transparent">Transparent</option>
+      </select>
+    </div>
+
+    <div class="widgets">
+      <div class="widget" id="time-widget"></div>
+      <div class="widget" id="cpu-widget">CPU: --%</div>
+      <div class="widget" id="ram-widget">RAM: --%</div>
+      <div class="widget" id="disk-widget">Disk: --%</div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
