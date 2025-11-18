@@ -1,0 +1,114 @@
+/* ---- Base window ---- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #111; /* default fallback */
+}
+
+/* ---- Dashboard container ---- */
+.dashboard {
+  padding: 16px;
+}
+
+/* ---- Drag zone + pill ---- */
+.dragzone {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6px;
+  position: relative;
+  z-index: 900;
+  -webkit-app-region: drag !important;
+}
+
+.dragzone * {
+  -webkit-app-region: no-drag !important;
+}
+
+.dragbar {
+  width: 100px;
+  height: 12px;
+  border-radius: 10px;
+  opacity: 0.95;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 999;
+  -webkit-app-region: drag !important;
+  pointer-events: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+}
+
+/* ---- Widgets ---- */
+.widgets {
+  display: flex;
+  gap: 16px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.widget {
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(50, 50, 50, 0.85);
+  min-width: 120px;
+  min-height: 48px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* ---- Normal theme ---- */
+body.theme-normal {
+  background: #111;
+}
+
+body.theme-normal .dragbar {
+  background: #ffffff;
+}
+
+body.theme-normal .widget {
+  background: rgba(30,30,30,0.85);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* ---- Transparent  ---- */
+body.theme-transparent {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(50px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  color: #fff;
+}
+
+body.theme-transparent .dragbar {
+  background: rgba(0,0,0,0.6);
+}
+
+body.theme-transparent .widget {
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.22);
+  transition: all 0.3s ease;
+}
+
+/* ---- Non-draggable default ---- */
+* {
+  -webkit-app-region: no-drag;
+}
+
+/* ---- Re-enable drag for dragzone/pill ---- */
+.dragzone,
+.dragzone .dragbar {
+  -webkit-app-region: drag !important;
+}
